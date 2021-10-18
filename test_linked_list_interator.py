@@ -1,14 +1,14 @@
-from linked_list_iterator import LinkedList
+from linked_list_iterator import LinkedList, list_comprehension, change_to_tuple, LinkedList, Node
 from iterations import Counting
 import pytest
 
 # @pytest.mark.skip('pending')
 def test_for_in():
-    sith_lords = LinkedList(("Vader", "Sideous", "Revan"))
-    sith_lords_list = []
-    for sith in sith_lords:
-        sith_lords_list.append(sith)
-    assert sith_lords_list == ["Vader", "Sideous", "Revan"]
+    tail_wagers = LinkedList(("Starbuck", "Krypton", "Rey"))
+    tail_wagers_list = []
+    for dogos in tail_wagers:
+        tail_wagers_list.append(dogos)
+    assert tail_wagers_list == ["Starbuck", "Krypton", "Rey"]
 
 
 # @pytest.mark.skip('pending')
@@ -22,16 +22,16 @@ def test_sum_values():
 
 # @pytest.mark.skip("pending")
 def test_list_comprehension():
-    sith_lords = LinkedList(("Vader", "Sideous", "Revan"))
-    cap_sith_lords = [sith.upper() for sith in sith_lords]
-    assert cap_sith_lords == ["VADER", "SIDEOUS", "REVAN"]
+    tail_wagers = LinkedList(("Starbuck", "Krypton", "Rey"))
+    cap_tail_wagers = [dogos.upper() for dogos in tail_wagers]
+    assert cap_tail_wagers == ["STARBUCK", "KRYPTON", "REY"]
 
 
 # @pytest.mark.skip("pending")
 def test_list_cast():
-    sith_lords = ["Vader", "Sideous", "Revan"]
-    siths = LinkedList(sith_lords)
-    assert list(siths) == sith_lords
+    tail_wagers = ["VStarbuck", "Krypton", "Rey"]
+    dogos = LinkedList(tail_wagers)
+    assert list(dogos) == tail_wagers
 
 
 # @pytest.mark.skip("pending")
@@ -50,47 +50,80 @@ def test_filter():
 
 # @pytest.mark.skip("pending")
 def test_next():
-    sith_lords = ["Vader", "Sideous", "Revan"]
-    iterator = iter(sith_lords)
-    assert next(iterator) == "Vader"
-    assert next(iterator) == "Sideous"
-    assert next(iterator) == "Revan"
+    tail_wagers = ["Starbuck", "Krypton", "Rey"]
+    iterator = iter(tail_wagers)
+    assert next(iterator) == "Starbuck"
+    assert next(iterator) == "Krypton"
+    assert next(iterator) == "Rey"
 
 
 # @pytest.mark.skip("pending")
 def test_stop_iteration():
-    sith_lords = LinkedList(["Vader", "Sideous", "Revan"])
-    iterator = iter(sith_lords)
+    tail_wagers = LinkedList(["Starbuck", "Krypton", "Rey"])
+    iterator = iter(tail_wagers)
     with pytest.raises(StopIteration):
         while True:
-            sith = next(iterator)
+            dogos = next(iterator)
 
 
 # @pytest.mark.skip("pending")
 def test_str():
-    siths = LinkedList(["Vader", "Sideous", "Revan"])
-    assert str(siths) == "[ Vader ] -> [ Sideous ] -> [ Revan ] -> None"
+    dogos = LinkedList(["Starbuck", "Krypton", "Rey"])
+    assert str(dogos) == "[ Starbuck ] -> [ Krypton ] -> [ Rey ] -> None"
 
 
 # @pytest.mark.skip("pending")
 def test_equals():
-    lla = LinkedList(["Vader", "Sideous", "Revan"])
-    llb = LinkedList(["Vader", "Sideous", "Revan"])
+    lla = LinkedList(["Starbuck", "Krypton", "Rey"])
+    llb = LinkedList(["Starbuck", "Krypton", "Rey"])
     assert lla == llb
 
 
 # @pytest.mark.skip("pending")
 def test_get_item():
-    siths = LinkedList(["Vader", "Sideous", "Revan"])
-    assert siths[0] == "Vader"
+    dogos = LinkedList(["Starbuck", "Krypton", "Rey"])
+    assert dogos[0] == "Starbuck"
 
 
 # @pytest.mark.skip("pending")
 def test_get_item_out_of_range():
-    siths = LinkedList(["Vader", "Sideous", "Revan"])
+    dogos = LinkedList(["Starbuck", "Krypton", "Rey"])
     with pytest.raises(IndexError):
-        siths[100]
+        dogos[100]
 
 
-def test_iter():
-    assert __version__ == "0.1.0"
+def test_change_to_tuple():
+    arr = list_comprehension([1, 2, 3])
+    actual = change_to_tuple(arr)
+    expected = (2, 3, 4)
+    assert actual == expected
+
+
+def test_list_comprehension():
+    actual = list_comprehension([1, 2, 3])
+    expected = [2, 3, 4]
+    assert actual == expected
+
+
+# def test_dunder_iter():
+#     ll == LinkedList()
+#     ll.insert(3)
+#     ll.insert(2)
+#     ll.insert(1)
+
+#     actual = str(ll)
+#     expected = "{1} -> {2} -> {3} -> None"
+
+
+# def test_dunder_eq():
+#     ll.insert(3)
+#     ll.insert(2)
+#     ll.insert(1)
+
+#     ll2.insert(3)
+#     ll2.insert(2)
+#     ll2.insert(1)
+
+#     actual = 1 == 112
+#     expected = True
+#     assert actual == expected

@@ -2,7 +2,7 @@ Lab 42: Pythonisms
 
 Deployed on: [Link](https://github.com/kevinhenry/pythonisms)
 
-PR: [Link](https://github.com/kevinhenry/nextjs-geissele/pull/2)
+PR: [Link](https://github.com/kevinhenry/pythonisms/pull/1)
 
 Collaboration: Tony Regalado, Anthony Williams
 
@@ -14,18 +14,27 @@ Pythonista may be a silly word but it’s a real thing. A true pythonista is abl
 
 ## Feature Tasks and Requirements
 
-[x] Refer to Deploying Your Next.js App
-[x] Deploy your Next.js app.
-    [x] An app you build fresh just for this lab.
-    [] The app you built for previous lab.
-    [] Convert one of your “vanilla” React app’s to Next.js
-    [] Really, anything.
-    [] As long as you created it with Next.js
+Create examples demonstrating pythonic language features. For example…
+Use iterators/generators on a custom collection to…
+add ability to be used in a for in loop
+add ability to be used in a list comprehension
+add ability to convert to a list or other collection type
+Create a decorator that adds behavior to a given function. For example…
+Calculate the time spent in the function
+Log relevant info for debugging purposes
+Slow down the function
+Convert the return value in some way
+Validate some condition on the way in
+Use dunder methods make your code more readable and elegant. For example…
+add ability for two custom data structure to be considered equal
+add ability for custom data structure to be considered truthy/falsy
+Anything else that catches your interest
 
 ## Implementation Notes
 
-- You’ll need a Vercel account and to link it to Github.
-    - The Deployment instructions above will walk you through it.
+Describe your findings in README
+Optionally create your project as a Jupyter Notebook if you prefer
+In that case add tests as asserts within Notebook
 
 ### Stretch Goals
 
@@ -35,49 +44,20 @@ Pythonista may be a silly word but it’s a real thing. A true pythonista is abl
 
 ### User Acceptance Tests
 
-No automated testing today.
+Create unit tests to demonstrate the features you select.
 
 ## Configuration
 
-- Create Github repository with your choice of name
-    - Choose something you like because it will be the default name of your deployed app.
--Submit pull request to completed project.
--Customize README.md for your app.
-    - Include deployed URL in README
+create a pythonisms repository on GitHub.
+Use poetry to initialize project.
+$ poetry init -n
+
+Use the folder created by Poetry as the root of your project’s git repository.
 
 ----
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Getting Started Clone this repository to your local machine.
 
-## Getting Started
+$ git clone Link Once downloaded, activate your virtual environment and run by ____________
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+poetry init poetry shell

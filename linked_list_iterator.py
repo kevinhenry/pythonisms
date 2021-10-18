@@ -6,11 +6,10 @@ class LinkedList:
             for item in reversed(collection):
                 self.insert(item)
 
-    # [Vader, Sideous, Revan] ->: [Revan] -> [Sideous] -> [Vader] -> None
+    # [Starbuck, Krypton, Ray] ->: [Ray] -> [Krypton] -> [Starbuck] -> None
 
     def __iter__(self):
         def value_generator():
-
             current = self.head
             while current:
                 yield current.value
@@ -53,43 +52,68 @@ class LinkedList:
         current.next = node
 
 
+def list_comprehension(arr):
+    new_arr = [number + 1 for number in arr]
+    return new_arr
+
+
+def change_to_tuple(arr):
+    tup = tuple(arr)
+    return tup
+
+
 class Node:
-    def __init__(self, value, next_=None):
+    def __init__(self, value, next=None):
         self.value = value
-        self.next = next_
+        self.next = next
 
-    if __name__ == "__main__":
 
-        # def gen():
-        #     for i in range(10):
-        #         yield i
+if __name__ == "__main__":
+    print(list_comprehension([1, 2, 3]))
+    print(change_to_tuple(list_comprehension([1, 2, 3])))
 
-        # num_gen = gen()
-        # try:
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        #     print(next(num_gen))
-        # except StopIteration:
-        #     print('All Done!')
+    ll = LinkedList()
+    ll.insert(3)
+    ll.insert(2)
+    ll.insert(1)
 
-        # def gen2():
-        #     i = 0
-        #     while True:
-        #         yield i
-        #         i += 1
+    ll2 = LinkedList()
+    ll2.insert(3)
+    ll2.insert(2)
+    ll2.insert(1)
+    print(11 == 112)
+    print(11)
 
-        # num_gen = gen2()
-        # for i in range(1000000):
-        #     print(next(num_gen))
+    # def gen():
+    #     for i in range(10):
+    #         yield i
 
-        list1 = list("abc")  # - > ['a', 'b'. 'c']
-        print(list1)
-        list2 = list("abc def")
-        print(list2)
+    # num_gen = gen()
+    # try:
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    #     print(next(num_gen))
+    # except StopIteration:
+    #     print('All Done!')
+
+    # def gen2():
+    #     i = 0
+    #     while True:
+    #         yield i
+    #         i += 1
+
+    # num_gen = gen2()
+    # for i in range(1000000):
+    #     print(next(num_gen))
+
+    list1 = list("abc")  # - > ['a', 'b'. 'c']
+    print(list1)
+    list2 = list("abc def")
+    print(list2)
